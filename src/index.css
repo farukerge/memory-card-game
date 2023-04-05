@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   
+        .card {
+            position: relative;
+            transform: scale(1);
+            transform-style: preserve-3d;
+            transition: all .5s ease;   
+            width: 15%;
+        } 
+    
+        .card:active {
+            transform: scale(1);
+            transition: transform .2s;
+        }
+    
+        .front,
+        .back {
+            backface-visibility: hidden;
+        }
+    
+        .front {
+            transform: rotateY(180deg);
+        }
+    
+        .back {
+            position: absolute;
+        }
+    
+        .card.active {
+            transform: rotateY(180deg);
+        }
+        .disabled {
+            pointer-events: none;
+        }
+       
+}
